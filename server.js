@@ -14,6 +14,25 @@ app.use("/public", express.static("public"));
 app.use("/vendor", express.static("bower_components"));
 app.use(bodyParser.urlencoded({extended: true}));
 
+//TODO: Setup Views
+app.set('views', path.join(__dirname, 'views'));
+app.engine('ejs', require('ejs').renderFile);
+app.set('view engine', 'ejs');
+
+// ROOT ROUTE
+app.get('/', function (req, res) {
+    if(req.user) {
+      // res.render('main', {user: JSON.stringify(req.user)});
+      res.redirect('/clients');
+    }
+    else {
+      res.redirect('/login');
+    }
+});
+
+app.get('/login', ctrl.auth.users.getLogin);
+
+
 //TEST ENDPOINT
 app.get('/test', ctrl.test);
 
