@@ -5,13 +5,14 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     path = require('path'),
     db = require('./models'),
+    mongoose = require('mongoose'),
     request = require('request'),
     ctrl = require('./controllers');
 
 //TODO: Setup Angular for front end
 
+
 app.use("/public", express.static("public"));
-app.use("/vendor", express.static("bower_components"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 //TODO: Setup Views

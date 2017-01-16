@@ -1,5 +1,5 @@
 {
-  "name": "history-search-for-reddit",
+  "name": "calendar-text-reminder",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,6 +8,7 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
     "init": "^0.1.2",
+    "mongodb": "^2.2.21",
     "mongoose": "^4.6.0",
     "request": "^2.74.0",
     "ejs": "^2.3.3"
@@ -16,6 +17,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Andrew Ingle, Rishi Dhar",
   "license": "MIT"
 }
