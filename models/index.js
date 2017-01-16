@@ -1,13 +1,6 @@
+var mongoose = require('mongoose');
 
-var mongoose = require("mongoose");
+mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost/calendarTextReminder");
 
-//if using MONGOLAB
-mongoose.connect( process.env.MONGOLAB_URI ||
-          process.env.MONGOHQ_URL ||
-          //******************************
-          // REPLACE WITH LOCAL APP NAME *
-          "mongodb://localhost/REPLACE_ME");
-          //******************************
-          //******************************
 
-//module.exports.EXAMPLE = require('./EXAMPLE.js');
+module.exports.user = require('./user.js');
