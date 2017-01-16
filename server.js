@@ -31,8 +31,6 @@ app.get('/', function (req, res) {
     }
 });
 
-app.get('/login', ctrl.auth.users.getLogin);
-
 
 //TEST ENDPOINT
 app.get('/test', ctrl.test);
