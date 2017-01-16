@@ -15,7 +15,6 @@ var express = require('express'),
 app.use("/public", express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
-//TODO: Setup Views
 app.set('views', path.join(__dirname, 'views'));
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
@@ -34,6 +33,8 @@ app.get('/', function (req, res) {
 
 //TEST ENDPOINT
 app.get('/test', ctrl.test);
+
+app.get('/preference', ctrl.preference);
 
 http.listen(process.env.PORT || 2300, function(){
   console.log("Application listening on port: " + (process.env.PORT || 2300));
